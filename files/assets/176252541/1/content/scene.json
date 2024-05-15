@@ -1,0 +1,149 @@
+{
+	"scene": {
+		"version": 1,
+		"assets": {
+			"renders": [
+				{
+					"name": "EnvironmentProps",
+					"index": 0,
+					"meshes": 34,
+					"skinned": false,
+					"vertices": 2826964,
+					"triangles": 42802,
+					"attributes": {
+						"POSITION": 1,
+						"NORMAL": 1,
+						"COLOR": 1,
+						"TEXCOORD_0": 1
+					},
+					"meshCompression": ""
+				}
+			],
+			"materials": [
+				"Building_Coffee_Shop.004",
+				"Building_House_03_color03.004",
+				"Props_RoofProps.004",
+				"Natures.004",
+				"Road.005",
+				"Building_House_03_color02.004",
+				"Props_BillBoard_small.002",
+				"Props_TrafficProps.004",
+				"Building_Chicken_Shop.004",
+				"Props_Props_01.002",
+				"Building_House_01_color01.002",
+				"Building_Sky_big_color01.004",
+				"Building_Sky_small_color03.004",
+				"Building_Sky_small_color02.004",
+				"Vehicle_Car_color03.002",
+				"Vehicle_Taxi.002",
+				"Building_Residential_color03.004",
+				"Building_Gift_Shop.004",
+				"Building_Sky_big_color02.004",
+				"Vehicle_Pick_up_Truck_color02.004",
+				"Building_Sky_big_color03.004",
+				"Building_Music_Store.004",
+				"Vehicle_Pick_up_Truck_color03.002",
+				"Building_Sky_small_color01.004",
+				"Building_Pizza.004",
+				"Building_House_01_color02.002",
+				"Building_Bar.002",
+				"Building_House_02_color03.004",
+				"Vehicle_SUV_color01.004",
+				"Building_Auto_Service.004",
+				"Building_House_02_color02.002",
+				"Vehicle_SUV_color03.002",
+				"Vehicle_Pick_up_Truck_color01.002",
+				"Vehicle_Car_color02.002"
+			]
+		},
+		"entities": {
+			"0": {
+				"name": "RootNode",
+				"parent": -1,
+				"position": [
+					0,
+					0,
+					0
+				],
+				"rotation": [
+					0,
+					0,
+					0
+				],
+				"scale": [
+					0.01,
+					0.01,
+					0.01
+				],
+				"scaleCompensation": false,
+				"children": [
+					1
+				]
+			},
+			"1": {
+				"name": "EnvironmentProps",
+				"parent": 0,
+				"position": [
+					0,
+					0,
+					0
+				],
+				"rotation": [
+					0,
+					0,
+					0
+				],
+				"scale": [
+					1,
+					1,
+					1
+				],
+				"scaleCompensation": false,
+				"children": [
+
+				],
+				"components": {
+					"render": {
+						"id": 0,
+						"materials": [
+							"Building_Coffee_Shop.004",
+							"Building_House_03_color03.004",
+							"Props_RoofProps.004",
+							"Natures.004",
+							"Road.005",
+							"Building_House_03_color02.004",
+							"Props_BillBoard_small.002",
+							"Props_TrafficProps.004",
+							"Building_Chicken_Shop.004",
+							"Props_Props_01.002",
+							"Building_House_01_color01.002",
+							"Building_Sky_big_color01.004",
+							"Building_Sky_small_color03.004",
+							"Building_Sky_small_color02.004",
+							"Vehicle_Car_color03.002",
+							"Vehicle_Taxi.002",
+							"Building_Residential_color03.004",
+							"Building_Gift_Shop.004",
+							"Building_Sky_big_color02.004",
+							"Vehicle_Pick_up_Truck_color02.004",
+							"Building_Sky_big_color03.004",
+							"Building_Music_Store.004",
+							"Vehicle_Pick_up_Truck_color03.002",
+							"Building_Sky_small_color01.004",
+							"Building_Pizza.004",
+							"Building_House_01_color02.002",
+							"Building_Bar.002",
+							"Building_House_02_color03.004",
+							"Vehicle_SUV_color01.004",
+							"Building_Auto_Service.004",
+							"Building_House_02_color02.002",
+							"Vehicle_SUV_color03.002",
+							"Vehicle_Pick_up_Truck_color01.002",
+							"Vehicle_Car_color02.002"
+						]
+					}
+				}
+			}
+		}
+	}
+}

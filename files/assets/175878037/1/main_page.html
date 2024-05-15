@@ -1,0 +1,351 @@
+<div class="img-bg fullscreen" style="background-image: url('external_images/background.png');overflow: hidden;display:none">
+    <style>
+        @font-face {
+            font-family: 'wicked';
+            /* Give your font a name */
+            src: url('external_fonts/wicked.otf') format('opentype');
+            /* Path to your font file */
+        }
+
+        * {
+            color: white;
+            font-size: 20px;
+            font-family: 'wicked' !important;
+            letter-spacing: 1px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .img-bg {
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-horizontal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .center-vertical {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .form_field {
+            width: 345px;
+            box-sizing: border-box;
+            background: linear-gradient(180deg, #FF7010 0%, #EDA432 29%);
+            border-radius: 23px;
+            border: 1px #1E1E1E solid;
+            padding: 5px;
+        }
+
+        .form_field label {
+            text-align: center;
+            color: #ECF0F1;
+            font-size: 20px;
+            font-family: Wicked Mouse;
+            font-weight: 400;
+            word-wrap: break-word;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            padding: 10px 0px;
+        }
+
+        .form_field input {
+            width: 100%;
+            height: 62px;
+            background: #ECF0F1;
+            box-shadow:none !important;
+            border: none;
+            border-radius: 19px;
+            box-sizing: border-box;
+            padding:0px 10px;
+            font-family:Arial, Helvetica, sans-serif !important;
+            color: black;
+            font-size:24px;
+            -webkit-text-stroke-width: .3px;
+            -webkit-text-stroke-color: black;
+            outline: none;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            right: 0px;
+            left: 0px;
+
+        }
+        table {
+            width: 100%; /* Set the table width to 100% of its container */
+            border-collapse: collapse; /* Collapse borders between cells */
+        }
+       
+        tr {
+            border: none; /* Add borders to table cells */
+            text-align: left; /* Center-align content within cells */
+            height: 32.5px !important;
+            font-size: 13px !important;
+            display:block;
+            border-radius: 5px !important;
+        }
+        td{
+            font-size: 13px !important;
+            padding: 6px 40px;
+            
+        }
+        tbody tr:nth-child(odd) { background:#F4A36E; }
+        tbody tr:nth-child(even) { background:#C7733A; }
+        /* thead tr:nth-child(odd) { background:#C7733A; } */
+        .leaderboard_content::-webkit-scrollbar {
+            display: none; 
+            -ms-overflow-style: none;
+        }
+        .leaderboard_content {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        
+    </style>
+    <div id="authentication" class="center" style="height: 100%;display: none;">
+        <form class="center" style="height: 100%;flex-direction: column;gap:20px 0px;">
+            <div class="center-horizontal form_field">
+                <label>
+                    ENTER NAME
+                </label>
+                <input type="text" name="name" style="text-shadow:none;" >
+            </div>
+            <div class="center-horizontal form_field">
+                <label>
+                    ENTER PHONE NO.
+                </label>
+                <input type="tel" name="phone" style="text-shadow:none;" placeholder="01XXXXXXXXX">
+            </div>
+            <button type="button" onclick="SubmitInfo(event,'loadng_screen')" style="margin-top:150px;width: 268px; height: 63px; position: relative;overflow: hidden;;border:6px solid white;border-radius:18px;background-color:#FF3131;">
+                <div style="position: absolute;background-color:white;height: 45px;width: 224px;opacity:.25;transform: translate(-30px,-30px) rotate(-10deg);border-radius:20%;"></div>
+                SUBMIT
+            </button>
+        </form>
+    </div>
+    <div onclick="ShowPage(event,'tap_to_start')" id="loadng_screen" class="center-horizontal" style="display:none;justify-content: space-between;height:100%;">
+        <img src="external_images/logo.png" style="width:300px;margin-top:60px;">
+        <div style="margin-bottom:80px;">
+            <div>
+                <div style="margin-top:150px;width: 300px; height: 30px; position: relative;overflow: hidden;border:4.5px solid white;border-radius:12px;background-color:#FF3131;">
+                    <div style="position: absolute;background-color:white;height: 45px;width: 324px;opacity:.25;transform: translate(-40px,-30px) rotate(-2deg);border-radius:20%;"></div>
+                    <div style="position: absolute;background-color:none;border:3px solid black;border-radius:8px;width: 100%;height: 100%;padding:6px;box-sizing: border-box;"></div>
+                </div>
+                <h1 style="text-align: center;">Loading...</h1>
+            </div>
+            
+        </div>
+    </div>
+    <div onclick="ShowPage(event,'game_screen')" id="tap_to_start" class="center-horizontal" style="display:none;justify-content: end;height:100%;">
+        <div style="margin-bottom:35px;">
+            <div class="center-horizontal">
+                <img src="external_images/double_down.png" style="width:200px;">
+                <h1 style="text-align: center;font-size:24px;position: relative;height:40px;width:300px;">
+                    <span style="position: absolute;width: 100%;margin: auto;left: 0px;right: 0px;font-size:24px;-webkit-text-stroke-width: .3px;-webkit-text-stroke-color: black;">TAP TO START...</span>
+                </h1>
+
+            </div>
+        </div>
+    </div>
+    <div onclick="ShowPage(event,'game_over')" id="game_screen" class="center-horizontal" style="display:none;justify-content: end;height:100%;">
+        <div style="position: absolute;left:10px;top:12px;">
+            <img onclick="ShowPage(event,'pause_modal')" src="external_images/play_btn.png" style="width:70px;">
+        </div>
+    </div>
+    <div onclick="ShowPage(event,'leader_board')" id="game_over" class="center-horizontal" style="display:none;justify-content: center;height:100%;">
+        <div style="margin-top:-200px;">
+            <img src="external_images/congratulations.png" style="width:320px;">
+            <div style="text-align: center;">YOUR SCORE IS</div>
+            <div style="text-align: center;font-size:45px;color:#FFF500;-webkit-text-stroke-width: 3px;-webkit-text-stroke-color:#AF1A1A;text-shadow: none;">999!</div>
+        </div>
+        <div style="position: absolute;bottom:35px;">
+            <h1 style="text-align: center;">TAP TO CONTINUE...</h1>
+        </div>
+    </div>
+    <div id="leader_board" class="center-horizontal" style="display:none;justify-content: center;height:100%;">
+        <div class="center-horizontal img-bg" style="width:300px;height:550px;position: relative;margin-left:10px;margin-top:150px;">
+            <img src="external_images/congratulations.png" style="position:absolute;width:250px;top:-72px;z-index:0;">
+            <img src="external_images/leaderboard_header2.png" style="width:100%;z-index:100;">
+            <div class="center-horizontal" style="width: 100%;position: relative;top:-42px;right:0px;z-index:100;">
+                <table height="330" style="width:100%;background-color: none;">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Score</td>
+                        </tr>
+                    </thead>
+                    <tbody class=".leaderboard_content" height="292" style="display: block;overflow: auto;">
+                        <tr>
+                            <td>Azaz</td>
+                            <td>1000$</td>
+                        </tr>
+                        <tr>
+                            <td>Rakib</td>
+                            <td>900$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                          <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td>RAHAT</td>
+                            <td>800$</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="width:100%;height:33px;background-color: #E4A330;margin-top:-6px;border-radius:2px 2px 8px 8px;">
+
+                </div>
+            </div>
+            <button onclick="ShowPage(event,'tap_to_start')" style="margin-top:0px;font-size:20px;width: 180px; height: 50px; position: relative;overflow: hidden;;border:4.5px solid white;border-radius:18px;background:linear-gradient(to top,#982C2C 0%,#CC1F1F 35%,#E24040 64%,#F54646 86%,#FF1C1C 100%);text-shadow: none;border-radius:20px;">
+                Replay
+            </button>
+        </div>
+       
+    </div>
+    <div id="score_container" style="position: absolute;right:5px;top:13px;">
+        <img src="external_images/point.png" style="width:180px;">
+        <span id="score" style="width: 100%;margin: auto;font-size:19px;position:absolute;left:65px;top:12px;font-weight:100;">888888</span>
+    </div>
+    <div id="pause_modal" class="fullscreen center" style="background-color:rgba(0,0,0,.5);display:none;">
+        <div class="center-horizontal" style="background:linear-gradient(to top,#D77431,3%,#E39B2C 100%);height:335px;width: 345px;border-radius: 25px;padding:5px;">
+            <div class="center" style="width: 100%;height:61px;background-color:#ECF0F1;border-radius:50px;border:2px solid #34495E;flex:0 0 61px;">
+                <span style="color:#636363;text-shadow: none;font-family: Arial, Helvetica, sans-serif !important;font-weight:bolder;font-size:23px;">GAME PAUSE</span>
+            </div>
+            <div class="center" style="height:100%;flex-direction:column;width:100%;margin-bottom:40px;">
+                <button onclick="ShowPage(event,'tap_to_start')"  id="resume" style="margin-top:18px;font-size:20px;width: 80%; height: 50px; position: relative;overflow: hidden;;border:4.5px solid white;border-radius:18px;background:linear-gradient(to top,#982C2C 0%,#CC1F1F 35%,#E24040 64%,#F54646 86%,#FF1C1C 100%);text-shadow: none;border-radius:15px;">
+                    RESUME
+                </button>
+                <button onclick="ShowPage(event,'')" id="exit" style="margin-top:18px;font-size:20px;width: 80%; height: 50px; position: relative;overflow: hidden;;border:4.5px solid white;border-radius:18px;background: linear-gradient(0deg, #835959 0%, #6b4a4a 35%, #8F6060 64%, #8F6060 86%, #8F6060 100%);text-shadow: none;border-radius:15px;">
+                    EXIT
+                </button>
+            </div>
+           
+        </div>
+    </div>
+    <div id="warning_modal" class="fullscreen center" style="background-color:rgba(0,0,0,.5);display:none;">
+        <div class="center-horizontal" style="background:linear-gradient(to top,#D77431,3%,#E39B2C 100%);height:335px;width: 345px;border-radius: 25px;padding:5px;">
+            <div class="center" style="width: 100%;height:61px;background-color:#ECF0F1;border-radius:50px;border:2px solid #34495E;flex:0 0 61px;">
+                <span style="color:#636363;text-shadow: none;font-family: Arial, Helvetica, sans-serif !important;font-weight:bolder;font-size:23px;">KFC SURFERS</span>
+            </div>
+            <div class="center" style="height:100%;">
+                <h1 id="warning_message" style="padding:0px 30px;text-align: center;"></h1>
+            </div>
+           
+            <div class="center" style="flex-direction:column;justify-content: end;width:100%;margin-bottom:30px;">
+                <button onclick="HideSelf(event,'warning_modal')"  id="resume" style="margin-top:18px;font-size:20px;width: 80%; height: 50px; position: relative;overflow: hidden;;border:4.5px solid white;border-radius:18px;background:linear-gradient(to top,#982C2C 0%,#CC1F1F 35%,#E24040 64%,#F54646 86%,#FF1C1C 100%);text-shadow: none;border-radius:15px;">
+                    OK
+                </button>
+            </div>
+           
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        var pages=["authentication","loadng_screen","tap_to_start","game_screen","game_over","leader_board","pause_modal"];
+        var lastPage=null;
+        var pageIndex=0;
+        $(document).ready(function()
+        {
+            ShowPage(null,"authentication");
+        })
+        function SubmitInfo(e,pageName)
+        {
+            var name=$("input[name='name']").val();
+            var phone=$("input[name='phone']").val();
+            // if(name.length<=0)
+            // {
+            //     $("#warning_message").text("PLEASE ENTER VALID NAME");
+            //     $("#warning_modal").css("display","flex");
+            //     return;
+            // }
+            // if(!IsValidContact(phone))
+            // {
+            //     $("#warning_message").text("PLEASE ENTER VALID Contact Number");
+            //     $("#warning_modal").css("display","flex");
+            //     return;
+            // }
+            ShowPage(e,pageName);
+        }
+        function ShowPage(e,pageName)
+        {
+            if(e) e.stopPropagation();
+            console.log(e);
+            console.log(pageName);
+            if(lastPage) $(`#${lastPage}`).css("display","none");
+            lastPage=pageName;
+            pageIndex=pages.indexOf(pageName);
+            if(pageIndex>=0)
+            {
+                $(`#${pages[pageIndex]}`).css("display","flex");
+            }
+            if(pageIndex>2)
+            {
+                $(`#score_container`).css("display","flex");
+            }
+            else if(pageIndex>=0)
+            {
+                $(`#score_container`).css("display","none");
+            }
+        }
+        function IsValidContact(contact)
+        {
+            const phoneNumberRegex = /^(?:\+?880|880|01)(?:\s?\d){9,10}$/;
+            return phoneNumberRegex.test(contact);
+        }
+        function HideSelf(e,pageName)
+        {
+            if(e) e.stopPropagation();
+            $(`#${pageName}`).css("display","none");
+        }
+    </script>
+</div>
